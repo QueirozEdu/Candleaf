@@ -1,0 +1,124 @@
+<div class="heading-card">
+    <h1 class="heading-emoji">
+        {{ section.settings.emoji }}
+    </h1>
+    <h1 class="heading-title">
+        {{ section.settings.title }}
+    </h1>
+    <h3 class="heading-description">
+        {{ section.settings.description }}
+    </h3>
+    <button class="heading-button">
+        <a href="{{ section.settings.view-btn-link }}"> {{ section.settings.view-btn }} </a>
+    </button>
+</div>
+
+<style>
+.heading-emoji {
+    margin-top: 33px;
+}
+.heading-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: calc((100vw / 2) - 365px);
+    position: absolute;
+    top: 250px;
+
+    width: 730px;
+    height: 349px;
+    top: -40;
+    background: rgba(247, 248, 250, 0.8);
+    backdrop-filter: blur(24px);
+}
+
+.heading-emoji {
+    margin-top: 33px;
+}
+
+.heading-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.heading-description {
+    max-width: 540px;
+    flex-wrap: wrap;
+    text-align: center;
+
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 1.125em;
+
+    margin: 0;
+}
+
+.heading-button {
+    background: var(--green);
+    width: 310px;
+    height: 40px;
+
+    border: none;
+    border-radius: 4px;
+
+    margin-top: 50px;
+}
+.heading-button a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+</style>
+{% schema %}
+{
+
+    "name": "Heading Card", // Section name
+    "settings": [
+    {
+    "id": "emoji",
+    "type": "text",
+    "label": "Heading emoji"
+    },
+    {
+    "id": "title",
+    "type": "text",
+    "label": "Heading title"
+    },
+    {
+    "id": "description",
+    "type": "textarea",
+    "label": "Description"
+    },
+    {
+    "id": "view-btn-link",
+    "type": "url",
+    "label": "Button URL"
+    },
+    {
+    "id": "view-btn",
+    "type": "text",
+    "label": "Button name"
+    }
+    ],
+    "presets": [
+    {
+    "name": "Card Title",
+    "category": "ADVANCED LAYOUT"
+    }
+    ]
+ 
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+
+{% javascript %}
+{% endjavascript %}

@@ -6,16 +6,22 @@
 </div>
 
 <style>
-    
+    .bg-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 </style>
 {% schema %}
 {
     
     "name": "Heading image",
     "tag": "section",
+    "max_blocks":1,
     "settings": [
     {
-        "type": "image",
+        "type": "image_picker",
         "id": "heading",
         "label": "Heading"
     }
