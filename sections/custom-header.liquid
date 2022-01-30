@@ -1,0 +1,104 @@
+
+<section class="custom-header">
+    
+    <h1 class="header-logo">
+        <a href="#">
+            <img src="{{ 'logo.png' | asset_img_url: 'small' }}" alt="Candleaf logo" />            
+        </a>
+    </h1>
+    <nav class="header-nav-menu">
+
+         <div class="dropdown-discovery">
+             <a href="#">Discovery<img src="{{- 'chevron-down.png' | asset_img_url: '25px' -}}" alt="Discovery dropdown menu"></a>
+                <div class="dropdown-discovery-content">
+                    <a href="#">Lorem ipsum dolor sit amet</a>
+                    <a href="#">Nulla rutrum egestas orci</a>
+                    <a href="#">Donec mattis orci eu imperdiet mattis</a>
+                </div>
+                <a href="#">About</a>
+                <a href="#">Contact us</a>
+        </div>   
+                
+           
+    </nav>
+    <div class="icons">
+
+        <a href="#">
+            <img src="{{ 'profile.png' | asset_img_url: '25px' }}" alt="Profile Icon"></a>
+        <a href="#">
+            <img src="{{ 'cart.png' | asset_img_url: '25px' }}" alt="Cart Icon"></a>
+    </div>
+    
+</section>
+
+<style>
+.custom-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--font-header) !important;
+    
+}
+
+.navigation {
+    width: 1em;
+    justify-content: space-between;
+}
+
+.header-nav-menu a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.icons a{
+    margin: 25px;
+}
+
+.dropdown-discovery {
+    position: relative;
+}
+
+
+  
+.dropdown-discovery-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    }
+  
+.dropdown-discovery:hover:first-child .dropdown-discovery-content {
+        display: grid;
+        z-index: 100;
+}
+
+.dropdown-discovery:hover {
+    color: var(--green);
+}
+
+</style>
+
+{%schema%}
+{
+    "name": "Custom header",
+    "settings": [
+    
+    ]
+}
+{%endschema%}
+
+
+{% stylesheet %}   
+
+
+
+{% endstylesheet %}
+
+
+{% javascript %}
+{% endjavascript %}
