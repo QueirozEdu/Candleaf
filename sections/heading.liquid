@@ -1,0 +1,48 @@
+<div class="bg-image">
+    {% for block in section.blocks %}
+    <img src=" {{ block.settings.image | img_url: 'master' }}" alt="Heading image">
+        
+    {% endfor %}
+</div>
+
+<style>
+    
+</style>
+{% schema %}
+{
+    
+    "name": "Heading image",
+    "tag": "section",
+    "settings": [
+    {
+        "type": "image",
+        "id": "heading",
+        "label": "Heading"
+    }
+    ],
+    "blocks": [
+    {
+        "name": "Image",
+        "type": "image",
+        "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Select a Image"
+        }
+        ]
+    }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+.bg-image {
+    width: 100vw;
+    height: auto;
+}
+
+{% endstylesheet %}
+
+{% javascript %}
+
+{% endjavascript %}
