@@ -141,10 +141,19 @@
               "author": "Luisa",
               "link": ""
             }
+          },
+          "aa5b41c3-e9ed-435d-908d-67919ae36066": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>“Raccomended for everyone”<\/p>",
+              "author": "Edoardo",
+              "link": ""
+            }
           }
         },
         "block_order": [
-          "09b0571d-30a7-4706-b885-a5fae5377534"
+          "09b0571d-30a7-4706-b885-a5fae5377534",
+          "aa5b41c3-e9ed-435d-908d-67919ae36066"
         ],
         "settings": {
           "title": "Testimonials",
