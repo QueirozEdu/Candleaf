@@ -149,7 +149,8 @@
             "settings": {
               "quote": "<p>“Raccomended for everyone”<\/p>",
               "author": "Edoardo",
-              "link": ""
+              "link": "",
+              "image": "shopify:\/\/shop_images\/Edoardo.png"
             }
           },
           "d99debd3-c26b-45b7-b3f8-95f9eb534c2b": {
@@ -157,7 +158,8 @@
             "settings": {
               "quote": "<p>“Looks very natural, the smell is awesome”<\/p>",
               "author": "Mart",
-              "link": ""
+              "link": "",
+              "image": "shopify:\/\/shop_images\/mart.png"
             }
           }
         },
