@@ -110,11 +110,11 @@
       "heading-card": {
         "type": "heading-card",
         "settings": {
-          "emoji": "ds",
-          "title": "fdgfdg",
-          "description": "fdgdfg",
+          "emoji": "🌱",
+          "title": "The nature candle",
+          "description": "All handmade with natural soy wax, Candleaf is a companion for all your pleasure moments",
           "view-btn-link": "",
-          "view-btn": "dfg"
+          "view-btn": "Discovery our colection"
         }
       }
     },
