@@ -149,11 +149,20 @@
               "author": "Edoardo",
               "link": ""
             }
+          },
+          "d99debd3-c26b-45b7-b3f8-95f9eb534c2b": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>“Looks very natural, the smell is awesome”<\/p>",
+              "author": "Mart",
+              "link": ""
+            }
           }
         },
         "block_order": [
           "09b0571d-30a7-4706-b885-a5fae5377534",
-          "aa5b41c3-e9ed-435d-908d-67919ae36066"
+          "aa5b41c3-e9ed-435d-908d-67919ae36066",
+          "d99debd3-c26b-45b7-b3f8-95f9eb534c2b"
         ],
         "settings": {
           "title": "Testimonials",
