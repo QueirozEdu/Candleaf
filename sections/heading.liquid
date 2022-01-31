@@ -1,6 +1,6 @@
 <div class="bg-image">
     {% for block in section.blocks %}
-    <img src=" {{ block.settings.image | img_url: 'master' }}" alt="Heading image">
+    <img class="heading-background" src=" {{ block.settings.image | img_url: 'master' }}" alt="Heading image">
         
     {% endfor %}
 </div>
@@ -11,6 +11,10 @@
         justify-content: center;
         align-items: center;
         position: relative;
+    }
+    .heading-background {
+        overflow: hidden;
+        max-width: 100vw;
     }
 </style>
 {% schema %}

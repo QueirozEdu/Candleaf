@@ -1,0 +1,133 @@
+<div class="products-section">
+    <h1 class="products-section-title">{{ section.settings.title }}</h1>
+    <h4 class="products-section-description">{{ section.settings.description }}</h4>
+</div>
+<section class="products-card-section">
+    <ul class="products-card-list">
+        {% for product in collections.home.products limit: 8 %}
+            <a href="{{ product.url }}">
+                <li class="product-card">
+                    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="Product Image">
+                    <p>{{ product.title }}
+                        <div class="product-price">
+                            <p>{{ product.price | money }}</p>
+                        </div>
+                    </p>
+                </li>
+            </a>
+        {% endfor %}
+    </ul>
+</section>
+
+
+
+<style>
+    .products-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .products-section-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    .products-section-description {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1.125em;
+    }
+    .products-card-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+    }
+
+    .products-card-list{
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 30px;
+        
+    }
+    .products-card-list a {
+        text-decoration: none;
+        color: #1D293F;
+        
+;
+    }
+
+    .product-card {
+        width: 255px;
+        height: auto;
+
+        background-color: var(--background-color);
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .product-card img {
+        margin:0;
+        padding: 0;
+    }
+
+    .product-card p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1em;
+        margin-left: 30px
+    }
+
+    .product-price {
+        color: var(--green);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        position: relative;
+        background-color: white;
+        height: 55px;
+        width: 255px;
+    }
+
+    .product-price p {
+        position: absolute;
+        right: 26px;
+    }
+
+</style>
+{% schema %}
+{
+"name": "Products section", // Section name
+"settings": [
+{
+"id": "title",
+"type": "text",
+"label": "Title"
+},
+{
+"id": "description",
+"type": "textarea",
+"label": "Description"
+}
+],
+"presets": [
+{
+"name": "Card Title",
+"category": "ADVANCED LAYOUT"
+}
+]
+
+}
+{% endschema %}
+
+{% stylesheet %}    
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
