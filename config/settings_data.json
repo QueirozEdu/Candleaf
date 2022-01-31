@@ -123,6 +123,33 @@
           "title": "Products",
           "description": "Order it for you or for your beloved ones"
         }
+      },
+      "banner": {
+        "type": "banner",
+        "settings": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "blocks": {
+          "09b0571d-30a7-4706-b885-a5fae5377534": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>“I love it! No more air fresheners”<\/p>",
+              "author": "Luisa",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "09b0571d-30a7-4706-b885-a5fae5377534"
+        ],
+        "settings": {
+          "title": "Testimonials",
+          "quote": "Some quotes from our happy customers"
+        }
       }
     },
     "content_for_index": [
