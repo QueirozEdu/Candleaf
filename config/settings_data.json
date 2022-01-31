@@ -84,6 +84,27 @@
         "type": "main-password-footer",
         "settings": {
         }
+      },
+      "custom-header": {
+        "type": "custom-header",
+        "settings": {
+        }
+      },
+      "heading": {
+        "type": "heading",
+        "settings": {
+          "heading": "shopify:\/\/shop_images\/bg-image.png"
+        }
+      },
+      "heading-card": {
+        "type": "heading-card",
+        "settings": {
+          "emoji": "",
+          "title": "",
+          "description": "",
+          "view-btn-link": "",
+          "view-btn": ""
+        }
       }
     },
     "content_for_index": [
