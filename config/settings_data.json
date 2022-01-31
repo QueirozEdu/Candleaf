@@ -150,7 +150,8 @@
               "quote": "<p>“Raccomended for everyone”<\/p>",
               "author": "Edoardo",
               "link": "",
-              "image": "shopify:\/\/shop_images\/Edoardo.png"
+              "image": "shopify:\/\/shop_images\/Edoardo.png",
+              "number-of-stars": 5
             }
           },
           "d99debd3-c26b-45b7-b3f8-95f9eb534c2b": {
@@ -159,7 +160,8 @@
               "quote": "<p>“Looks very natural, the smell is awesome”<\/p>",
               "author": "Mart",
               "link": "",
-              "image": "shopify:\/\/shop_images\/mart.png"
+              "image": "shopify:\/\/shop_images\/mart.png",
+              "number-of-stars": 4
             }
           }
         },
