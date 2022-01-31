@@ -92,6 +92,17 @@
       },
       "heading": {
         "type": "heading",
+        "blocks": {
+          "3340b1cb-908e-4d35-8d69-363459751901": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/bg-image.png"
+            }
+          }
+        },
+        "block_order": [
+          "3340b1cb-908e-4d35-8d69-363459751901"
+        ],
         "settings": {
           "heading": "shopify:\/\/shop_images\/bg-image.png"
         }
