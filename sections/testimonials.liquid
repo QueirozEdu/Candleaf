@@ -1,5 +1,22 @@
-<h2 class="title">{{ section.settings.title }}</h2>
-<h4 class="quote">{{ section.settings.quote }}</h4>
+<section class="testimonials">
+    <h2 class="title">{{ section.settings.title }}</h2>
+    <h4 class="quote">{{ section.settings.quote }}</h4>
+    <section class="testimonials-cards">
+        <ul>
+            {%- for block in section.blocks -%}
+                <li class="testimonial-cards-item">
+                    <img src="{{ block.section.image | img_url: 'small' }}" alt="Profile picture">
+                    <div>
+                        {% for star in block.section.number-of-stars %}
+                        <img src="{{ 'star.png' | asset_img_url }}" alt="">
+                        
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endfor %}
+        </ul>
+    </section>
+</section>
 
 {%- if section.blocks.size > 0 -%}
   {%- for block in section.blocks -%}
@@ -29,7 +46,7 @@
 {
   "name": "Testimonials",
   "class": "index-section",
-  "max_blocks": 8,
+  "max_blocks": 3,
   "settings": [
     {
       "type": "text",
@@ -62,10 +79,20 @@
           "default": "Author’s name"
         },
         {
-    "type": "url",
+          "type": "url",
           "id": "link",
           "label": "link"
-        }
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "number",
+          "id": "number-of-stars",
+          "label": "Stars"
+        }        
       ]
     }
   ],
