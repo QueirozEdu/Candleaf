@@ -116,6 +116,13 @@
           "view-btn-link": "",
           "view-btn": "Discovery our colection"
         }
+      },
+      "products-section": {
+        "type": "products-section",
+        "settings": {
+          "title": "Products",
+          "description": "Order it for you or for your beloved ones"
+        }
       }
     },
     "content_for_index": [
