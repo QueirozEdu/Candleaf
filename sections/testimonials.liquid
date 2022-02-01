@@ -1,45 +1,37 @@
+{%- if section.blocks.size > 0 -%}
 <section class="testimonials">
     <h2 class="title">{{ section.settings.title }}</h2>
     <h4 class="quote">{{ section.settings.quote }}</h4>
     <section class="testimonials-cards">
-        <ul>
-            {%- for block in section.blocks -%}
+        <ul class="testimonials-list">
+            {% for block in section.blocks %}
                 <li class="testimonial-cards-item">
-                    <img src="{{ block.section.image | img_url: 'small' }}" alt="Profile picture">
-                    <div>
-                        {% for star in block.section.number-of-stars %}
-                        <img src="{{ 'star.png' | asset_img_url }}" alt="">
-                        
-                        {% endfor %}
-                    </div>
+                    <img src=" {{ block.settings.image.src | img_url: "medium" }}" alt="Profile picture">
+                    
+                    {{ block.settings.stars }}
+                          {% for star in block.settings.stars %}
+                              <img src="{{ 'star.png' | img_url: 'small' }}" alt="">
+                          {% endfor %}  
+                    <p class="review">{{ block.settings.quote }}</p>
+                    <p class="author-name">{{ block.settings.author }}</p>
                 </li>
-                {% endfor %}
+            {% endfor %}
         </ul>
     </section>
 </section>
-
-{%- if section.blocks.size > 0 -%}
-  {%- for block in section.blocks -%}
-    <blockquote>
-      {%- if block.settings.quote != blank -%}
-        <p>
-          {{ block.settings.quote }}
-        </p>
-      {%- endif -%}
-    </blockquote>
-
-    {%- if block.settings.author != blank -%}
-      <cite>
-        <a href="{{ block.settings.link }}">
-          {{ block.settings.author }}
-        </a>
-      </cite>
-    {%- endif -%}
-  {%- endfor -%}
 {%- endif -%}
 
 <style>
-
+.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.testimonials-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 </style>
 
 {% schema %}
@@ -90,8 +82,9 @@
         },
         {
           "type": "number",
-          "id": "number-of-stars",
+          "id": "stars",
           "label": "Stars"
+          
         }        
       ]
     }
