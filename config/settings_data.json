@@ -141,7 +141,7 @@
               "author": "Luisa",
               "link": "",
               "image": "shopify:\/\/shop_images\/luisa.png",
-              "number-of-stars": 4
+              "stars": 2
             }
           },
           "aa5b41c3-e9ed-435d-908d-67919ae36066": {
@@ -151,7 +151,7 @@
               "author": "Edoardo",
               "link": "",
               "image": "shopify:\/\/shop_images\/Edoardo.png",
-              "number-of-stars": 2
+              "stars": 5
             }
           },
           "d99debd3-c26b-45b7-b3f8-95f9eb534c2b": {
@@ -160,8 +160,7 @@
               "quote": "<p>“Looks very natural, the smell is awesome”<\/p>",
               "author": "Mart",
               "link": "",
-              "image": "shopify:\/\/shop_images\/mart.png",
-              "number-of-stars": 4
+              "image": "shopify:\/\/shop_images\/mart.png"
             }
           }
         },
