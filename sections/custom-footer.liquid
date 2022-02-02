@@ -1,0 +1,39 @@
+<section class="custom-footer">
+    <hr class="custom-separator">
+    <div class="candleaf-info">
+        <img src="{{ 'logo-footer.png' | asset_img_url: 'medium' }}" alt="">
+        <p class="logo-text">{{ section.settings.logo-text }}</p>
+    </div>
+    <div></div>
+</section>
+
+<style>
+    .custom-footer {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 5% 10%;
+    }
+    .custom-separator {
+        margin: 16px;
+        border-top: 1px solid #FFFFFF;
+        border-radius: 5px;
+    }
+    .logo-text {
+        color: var(--white);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+        max-width: 250px;
+
+    }
+</style>
+{% schema %}
+{
+    "name": "Products section", // Section name
+    "settings": [
+    {
+    "id": "logo-text",
+    "type": "text",
+    "label": "Logo text"
+    }]
+}
+{% endschema %}
