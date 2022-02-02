@@ -181,6 +181,12 @@
           "title": "Popular",
           "description": "Our top selling product that you may like"
         }
+      },
+      "custom-footer": {
+        "type": "custom-footer",
+        "settings": {
+          "logo-text": "Your natural candle made for your home and for your wellness."
+        }
       }
     },
     "content_for_index": [
