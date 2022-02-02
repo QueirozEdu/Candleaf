@@ -4,17 +4,80 @@
         <p class="description">{{ section.settings.description }}</p>
     </div>
     <div class="images">
-        <ul>
-            {% for product in collections.popular.products %}
+        <ul class="cards"> 
+            {% for product in collections.popular.products limit:4 %}
                 <li class="popular-item">
-                    {{ product.image }}
-                    {{ product.title }}
-                    {{ product.price }}
+                   <img src="  {{ product.featured_image | img_url: 'medium'}} " alt="">
+                   <div class="card-text">
+                       <p class="product-title">{{ product.title }}</p>
+                       <p class="item-price">{{ product.price | money }}</p>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
     </div>
 </section>
+
+<style>
+    .popular {
+        width: 100vw;
+        margin-top: 90px;
+    }
+
+    .text {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+    }
+
+    .title {
+        font-size: 2.5em;
+        columns: rgba(11, 37, 75, 1);
+        margin: 0;
+    }
+    .description {
+        font-size: 1.125em;
+        color: rgba(94, 110, 137, 1);
+        margin: 7.5px 0 7,5px 0;
+    }
+
+    .cards {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .popular-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 255px;
+        height: auto;
+        padding: 0;
+        background-color: var(--background-color);
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .card-text {
+        background: var(--white);
+        width: 100%;
+    }
+    .product-title {
+        color: rgba(29, 41, 63, 1);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        align-self: flex-start;
+        margin: 0 0 10px 26px;
+    }
+
+    .item-price {
+        color: var(--green);
+        align-self: flex-end;
+        margin: auto auto 5% 70%;
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 600;
+    }
+
+</style>
 
 {% schema %}
 {
