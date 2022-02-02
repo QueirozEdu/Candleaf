@@ -1,37 +1,114 @@
 {%- if section.blocks.size > 0 -%}
 <section class="testimonials">
-    <h2 class="title">{{ section.settings.title }}</h2>
-    <h4 class="quote">{{ section.settings.quote }}</h4>
+    <div class="text">
+        <h2 class="title">{{ section.settings.title }}</h2>
+        <h4 class="quote">{{ section.settings.quote }}</h4>
+    </div>
     <section class="testimonials-cards">
         <ul class="testimonials-list">
             {% for block in section.blocks %}
                 <li class="testimonial-cards-item">
-                    <img src=" {{ block.settings.image.src | img_url: "medium" }}" alt="Profile picture">
+                    <img src=" {{ block.settings.image.src | img_url: "medium" }} " alt="Profile picture">
                     
-                    {{ block.settings.stars }}
-                          {% for star in block.settings.stars %}
-                              <img src="{{ 'star.png' | img_url: 'small' }}" alt="">
-                          {% endfor %}  
-                    <p class="review">{{ block.settings.quote }}</p>
+                    <div class="stars">
+
+                        {% assign start = 1 %}
+                        {% assign end = block.settings.stars %}
+                        {% for i in (start..end) %}
+                        <img src="{{ 'star.png' | asset_img_url }}" alt="">
+                        {% endfor %}
+                    </div>
+
+                    <div class="review">
+                    <p>{{ block.settings.quote }}</p>
                     <p class="author-name">{{ block.settings.author }}</p>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
     </section>
 </section>
-{%- endif -%}
+{% endif %}
 
 <style>
-.testimonials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.testimonials-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+    .testimonials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        background: rgba(86, 178, 128, 0.1);
+        padding-top: 100px;
+    }
+    .text {
+        margin: 0;
+        font-family: 'Poppins',sans-serif;
+        text-align: center;
+    }
+
+    .text h2 {
+        color: rgba(11, 37, 75, 1);
+    }
+
+    .text h4 {
+        color: rgba(94, 110, 137, 1);
+        margin-bottom: 30px;
+    }
+    .quote {
+        margin: 10px 0 0 0;
+        
+    }
+    .testimonials-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 30px;
+        padding-bottom: 90px;
+    }
+    
+    .testimonial-cards-item {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        line-height: 2em;
+        background: white;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 10px;
+        min-width: 350px;
+        box-shadow: 0px 4px 24px 0px rgba(0,0,0,0.16);
+        color: rgba(29, 41, 63, 1);
+;
+    }
+
+    .review {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 300px;
+        font-size: 1.375em;
+        text-align: center;
+        
+        
+    }
+
+    .review p {
+        padding: 0;
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .review p:last-child {
+        font-size: 0.75em;
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 400;
+        color: rgba(29, 41, 63, 0.8);
+;
+    }
 </style>
 
 {% schema %}
