@@ -240,14 +240,17 @@
       {{ content_for_layout }}
     </main>
     {%- endcomment -%}
-    <main>
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {% section 'heading' %}
-      {% section 'heading-card' %}
-      {% section 'products-section' %}
-      {% section 'banner' %}
-      {% section 'testimonials' %}
-      {% section 'popular' %}
     </main>
+    {% if template.name == 'index' %}
+      
+    {% section 'heading-card' %}
+    {% section 'products-section' %}
+    {% section 'banner' %}
+    {% section 'testimonials' %}
+    {% section 'popular' %}
+    {% endif %}
     {% section 'custom-footer' %}
     {%- comment -%}
     {% section 'footer' %}
