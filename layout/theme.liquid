@@ -164,6 +164,7 @@
         --white: white;
         --black: #272727;
         --background-color: #F7F8FA;
+        --grey-background: rgba(247, 248, 250, 1);
 
     
         --font-header: {{ 'Roboto', sans-serif | @font_face }};
@@ -249,8 +250,13 @@
     {% section 'banner' %}
     {% section 'testimonials' %}
     {% section 'popular' %}
-    {% endif %}
     {% section 'custom-footer' %}
+    {% endif %}
+
+    {% if template.name == 'product' %}
+      {% section 'custom-product-page' %}
+      {% section 'custom-footer' %}
+    {% endif %}
     {%- comment -%}
     {% section 'footer' %}
     {%- endcomment -%}

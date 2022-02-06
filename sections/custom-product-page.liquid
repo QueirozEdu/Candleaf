@@ -1,0 +1,205 @@
+
+    <section class="product-banner">
+        <div class="product-info">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="" class="product-media">
+            <div class="text">
+                <p class="description">{{ product.content }}</p>
+                <p class="shipping-price">
+                    {% if checkout.shipping_price %}
+                        <p>Shipping: {{ checkout.shipping_price | money }}</p>
+                    {% else %}
+                        <p class="free-shipping">🚚 FREE SHIPPING</p>
+                    {% endif %}     
+                </p>
+            </div>
+        </div>
+        <div class="buy-section">
+            <p class="product-title">{{ product.title }} Candleaf &copy;</p>
+            <div class="purchase-info">
+                
+                <div class="product-information">
+                    <p class="product-price">{{ product.price | money }}</p>
+                    <label for="quantity">Quantity</label>
+                    <input type="number" name="quantity" min="1" value="1" class="product-quantity">
+                </div>
+                <div class="frequency-information">
+                    <div class="first-option">
+                        <input type="radio" name="subscription" id="one-time">
+                        <label for="one-time">One time purchase</label>
+                    </div>
+                    <div class="second-option">
+                        <input type="radio" name="subscription" id="subscription">
+                        <label for="subscription">
+                            Subscribe and delivery every
+                            <select name="frequency" id="frequency">
+                                <option value="2-weeks">2 weeks</option>
+                                <option value="4-weeks">4 weeks</option>
+                                <option value="6-weeks">6 weeks</option>
+                            </select>
+                            <p class="subscription-discount-details">Subscribe now and get the 10% of discount on every recurring order.  The discount will be applied at checkout. <a href="#">See details</a></p>
+                        </label>
+                    </div>
+                    <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <input type="submit" value="+ Add to cart" class="add-button" />
+                    </form>
+                </div>
+            </div>
+            <section class="info">
+                <p><b>Wax:</b> Top grade Soy wax that delivers a smoke less,  consistent burn </p>
+                <p><b>Fragance:</b> Premium quality ingredients with natural essential oils </p>
+                <p><b>Burning Time:</b> 70-75 hours <b>Dimension:</b> 10cm x 5cm <b>Weight:</b> 400g</p>
+            </section>
+    </div>
+    
+</section>
+
+<style>
+    .product-banner {
+        display: grid;
+        grid-template-columns: 1.2fr 1.3fr;
+        justify-content: flex-start;
+        padding: 100px;
+        width: 100%;
+        max-width: 1400px;
+        place-items: center;
+        align-items: flex-start;
+        margin: auto;
+        }
+    .product-info {
+        max-width: 540px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto 15px;
+    }
+    .product-media {
+        background: var(--grey-background);
+        width: 100%;
+        max-width: 528px;
+        height: auto;
+    }
+    .free-shipping {
+        color: var(--green);
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+    }
+    .text {
+        text-align: center;
+        max-width: 100%;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        letter-spacing: -0.9px;
+        line-height: 26px;
+        margin: 30px;
+    }
+    .description {
+        font-weight: bold;
+        font-size: 1.375em;
+
+    }
+    .purchase-info {
+        display: flex;
+    }
+    
+    .product-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1.625em;
+        letter-spacing: -0.9px;
+        padding: 0;
+        margin: 0;
+        color: var(--black);
+    }
+    .product-price {
+        color: var(--green);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1.625em;
+    }
+    .product-information {
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        width: 400px;
+    }
+    .product-information input {
+        width: 60px;
+        color: var(--green);
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid var(--green);
+        border-radius: 2px;
+    }
+    .frequency-information {
+        margin-left: 5px;
+
+    }
+    .first-option, .second-option {
+        margin: 20px auto ;
+        padding: 10px;
+    }
+    .first-option input, .second-option input {
+        height: 16px;
+        width: 16px;
+        color: green;
+        background-color: grey;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .first-option label, .second-option label {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+    }
+    .second-option  {
+        flex-direction: row;
+        border: 1px solid #E6E6E6;
+        box-sizing: border-box;
+        border-radius: 7px;
+    }
+    .second-option label p {
+        font-weight: 500;
+        color: #818181;
+        font-family: 'Helvetica', sans-serif;
+    }
+    .second-option label p a {
+        text-decoration: none;
+        
+    }
+    .subscription-discount-details {
+        font-family: 'Helvetica', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        color: #818181;
+        line-height: 20px;
+    }
+    .subscription-discount-details a{
+        color: var(--green);
+    }
+    .add-button {
+        background: var(--green);
+        color: var(--white);
+        border:none;
+        border-radius: 7px;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.25em;
+    }
+    .info {
+        margin-top: 50px;
+        font-family: 'Helvetica', sans-serif;
+        line-height: 8px;
+        padding: 22px;
+        border: 1px solid #E6E6E6;
+        border-radius: 10px;
+        color: var(--green);
+    }
+    .info b {
+        color: #1D252C;
+    }
+</style>
