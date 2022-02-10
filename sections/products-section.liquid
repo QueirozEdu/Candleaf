@@ -7,7 +7,7 @@
         {% for product in collections.home.products limit: 8 %}
             <a href="{{ product.url }}">
                 <li class="product-card">
-                    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="Product Image">
+                    <img src="{{ product.featured_image | image_url }}" alt="Product Image">
                     <p>{{ product.title }}
                         <div class="product-price">
                             <p>{{ product.price | money }}</p>
@@ -106,26 +106,25 @@
 </style>
 {% schema %}
 {
-"name": "Products section", // Section name
-"settings": [
-{
-"id": "title",
-"type": "text",
-"label": "Title"
-},
-{
-"id": "description",
-"type": "textarea",
-"label": "Description"
-}
-],
-"presets": [
-{
-"name": "Card Title",
-"category": "ADVANCED LAYOUT"
-}
-]
-
+  "name": "Products section",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title"
+    },
+    {
+      "id": "description",
+      "type": "textarea",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Title",
+      "category": "ADVANCED LAYOUT"
+    }
+  ]
 }
 {% endschema %}
 

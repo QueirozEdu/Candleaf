@@ -1,6 +1,6 @@
 <div class="bg-image">
     {% for block in section.blocks %}
-    <img class="heading-background" src=" {{ block.settings.image | img_url: 'master' }}" alt="Heading image">
+    <img class="heading-background" src=" {{ block.settings.image | image_url }}" alt="Heading image">
         
     {% endfor %}
 </div>
@@ -19,30 +19,29 @@
 </style>
 {% schema %}
 {
-    
-    "name": "Heading image",
-    "tag": "section",
-    "max_blocks":1,
-    "settings": [
+  "name": "Heading image",
+  "tag": "section",
+  "max_blocks": 1,
+  "settings": [
     {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading"
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
     }
-    ],
-    "blocks": [
+  ],
+  "blocks": [
     {
-        "name": "Image",
-        "type": "image",
-        "settings": [
+      "name": "Image",
+      "type": "image",
+      "settings": [
         {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Select a Image"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select a Image"
         }
-        ]
+      ]
     }
-    ]
+  ]
 }
 {% endschema %}
 {% stylesheet %}

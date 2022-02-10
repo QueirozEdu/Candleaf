@@ -1,7 +1,12 @@
 {
   "sections": {
+    "cart-template": {
+      "type": "cart-items-template",
+      "settings": {
+      }
+    },
     "cart-items": {
-      "type": "main-cart-items",
+      "type": "custom-cart-items",
       "settings": {
       }
     },
@@ -35,6 +40,7 @@
     }
   },
   "order": [
+    "cart-items-template",
     "cart-items",
     "cart-footer",
     "featured-collection"

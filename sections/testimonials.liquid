@@ -8,7 +8,7 @@
         <ul class="testimonials-list">
             {% for block in section.blocks %}
                 <li class="testimonial-cards-item">
-                    <img src=" {{ block.settings.image.src | img_url: "medium" }} " alt="Profile picture">
+                    <img src=" {{ block.settings.image.src | image_url }} " alt="Profile picture">
                     
                     <div class="stars">
 
@@ -124,10 +124,10 @@
       "default": "Testimonials"
     },
     {
-        "type": "text",
-        "id": "quote",
-        "label": "Quote",
-        "default": "Some quotes from our happy customers"
+      "type": "text",
+      "id": "quote",
+      "label": "Quote",
+      "default": "Some quotes from our happy customers"
     }
   ],
   "blocks": [
@@ -161,8 +161,7 @@
           "type": "number",
           "id": "stars",
           "label": "Stars"
-          
-        }        
+        }
       ]
     }
   ],

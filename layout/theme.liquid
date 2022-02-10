@@ -11,7 +11,7 @@
     
     
     {%- if settings.favicon != blank -%}
-    <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
     
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
@@ -232,31 +232,35 @@
       {{ "accessibility.skip_to_text" | t }}
     </a>
     
-    {% section 'custom-header'%}
+    {% section 'custom-header' %}
     {%- comment -%}
     
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
     </main>
+    {{ content_for_layout }}
     {%- endcomment -%}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {% if template.name == 'index' %}
+      {% section 'heading' %}
+      {% section 'heading-card' %}
+      {% section 'products-section' %}
+      {% section 'banner' %}
+      {% section 'testimonials' %}
+      {% section 'popular' %}
+      {% endif %}
     </main>
-    {% if template.name == 'index' %}
-    {% section 'heading' %}
-    {% section 'heading-card' %}
-    {% section 'products-section' %}
-    {% section 'banner' %}
-    {% section 'testimonials' %}
-    {% section 'popular' %}
-    {% section 'custom-footer' %}
-    {% endif %}
-
+    
     {% if template.name == 'product' %}
-      {% section 'custom-product-page' %}
-      {% section 'custom-footer' %}
+    {% section 'custom-product-page' %}
     {% endif %}
+    
+    {% if template.name == 'cart' %} 
+    {% section 'cart-items-template' %}
+    {% section 'custom-cart-items' %}
+    {% endif %}
+    {% section 'custom-footer' %}
     {%- comment -%}
     {% section 'footer' %}
     {%- endcomment -%}

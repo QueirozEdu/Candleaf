@@ -1,7 +1,7 @@
 
     <section class="product-banner">
         <div class="product-info">
-            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="" class="product-media">
+            <img src="{{ product.featured_image | image_url }}" alt="" class="product-media">
             <div class="text">
                 <p class="description">{{ product.content }}</p>
                 <p class="shipping-price">

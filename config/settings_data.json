@@ -23,7 +23,7 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo": "shopify://shop_images/logo.png",
           "logo_width": 90,
           "logo_position": "middle-left",
           "menu": "main-menu",
@@ -53,7 +53,7 @@
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
             }
           }
         },
@@ -96,7 +96,7 @@
           "3340b1cb-908e-4d35-8d69-363459751901": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/bg-image.png"
+              "image": "shopify://shop_images/bg-image.png"
             }
           }
         },
@@ -104,7 +104,7 @@
           "3340b1cb-908e-4d35-8d69-363459751901"
         ],
         "settings": {
-          "heading": "shopify:\/\/shop_images\/bg-image.png"
+          "heading": "shopify://shop_images/bg-image.png"
         }
       },
       "heading-card": {
@@ -137,30 +137,30 @@
           "09b0571d-30a7-4706-b885-a5fae5377534": {
             "type": "quote",
             "settings": {
-              "quote": "<p>“I love it! No more air fresheners”<\/p>",
+              "quote": "<p>“I love it! No more air fresheners”</p>",
               "author": "Luisa",
               "link": "",
-              "image": "shopify:\/\/shop_images\/luisa.png",
+              "image": "shopify://shop_images/luisa.png",
               "stars": 4
             }
           },
           "aa5b41c3-e9ed-435d-908d-67919ae36066": {
             "type": "quote",
             "settings": {
-              "quote": "<p>“Raccomended for everyone”<\/p>",
+              "quote": "<p>“Raccomended for everyone”</p>",
               "author": "Edoardo",
               "link": "",
-              "image": "shopify:\/\/shop_images\/Edoardo.png",
+              "image": "shopify://shop_images/Edoardo.png",
               "stars": 5
             }
           },
           "d99debd3-c26b-45b7-b3f8-95f9eb534c2b": {
             "type": "quote",
             "settings": {
-              "quote": "<p>“Looks very natural, the smell is awesome”<\/p>",
+              "quote": "<p>“Looks very natural, the smell is awesome”</p>",
               "author": "Mart",
               "link": "",
-              "image": "shopify:\/\/shop_images\/mart.png",
+              "image": "shopify://shop_images/mart.png",
               "stars": 4
             }
           }
@@ -194,7 +194,7 @@
     ],
     "blocks": {
       "10436698916776057164": {
-        "type": "shopify:\/\/apps\/appstle-subscriptions\/blocks\/appstle-subscription-helper\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+        "type": "shopify://apps/appstle-subscriptions/blocks/appstle-subscription-helper/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
         "disabled": false,
         "settings": {
         }

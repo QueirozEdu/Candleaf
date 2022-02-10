@@ -5,9 +5,9 @@
     </div>
     <div class="images">
         <ul class="cards"> 
-            {% for product in collections.popular.products limit:4 %}
+            {% for product in collections.popular.products limit: 4 %}
                 <li class="popular-item">
-                   <img src="  {{ product.featured_image | img_url: 'medium'}} " alt="">
+                   <img src="  {{ product.featured_image | image_url }} " alt="">
                    <div class="card-text">
                        <p class="product-title">{{ product.title }}</p>
                        <p class="item-price">{{ product.price | money }}</p>
@@ -81,20 +81,18 @@
 
 {% schema %}
 {
-
-    "name": "Popular banner", // Section name
-    "settings": [
+  "name": "Popular banner",
+  "settings": [
     {
-    "id": "title",
-    "type": "text",
-    "label": "Section Title"
+      "id": "title",
+      "type": "text",
+      "label": "Section Title"
     },
     {
-    "id": "description",
-    "type": "text",
-    "label": "Section Description"
+      "id": "description",
+      "type": "text",
+      "label": "Section Description"
     }
-    ]
- 
+  ]
 }
 {% endschema %}

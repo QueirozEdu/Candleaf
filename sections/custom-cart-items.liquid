@@ -1,0 +1,175 @@
+{%- if cart.item_count > 0 -%}
+    <section class="cart-items-section">
+        <div class="table-header">
+            <p>Product</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Total</p>
+        </div>
+<hr class="custom-item-divider">
+
+<section class="items-proprieties">
+<form action="/cart" method="post">
+
+  {%- for item in cart.items -%}
+    <div class="item-description">
+        <div class="item-product">
+            <a href="{{ item.url | within: collections.all }}" class="custom-img-link">
+                <img src="{{ item | img_url: '200x200' }}" alt="{{ item.image.alt | escape }}">
+            </a>
+            <div class="item-features">
+                <a href="{{ item.url | whitin: collecions.all }}" class="product-item-title">{{ item.product.title }}</a>
+
+                <p class="custom-button-remove">
+                <a aria-label="Remove {{ item.variant.title }}" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
+                </p>
+            </div>
+        </div>
+        <div class="cart-item-price">
+            <p>{{ item.price | money }}</p>
+        </div>
+        <div>
+            <input type="number" name="quantity" min="1" value="1" class="product-quantity">
+        </div>
+        <div>
+            <p>{{ item.price | times: item.quantity | money }}</p>
+        </div>
+    </div>
+        {%- endfor -%}
+        <hr class="custom-item-divider">
+        <div class="checkout-proceed">
+            <div class="subtotal-calculation">
+                <p class="subtotal-information">Sub-total {{ cart.total_price | money }}</p>
+                <p class="tax-information">Tax and shipping cost will be calculated later</p>
+            </div>
+            <div class="custom-checkout-button-div">
+                <input type="submit" name="checkout" value="Checkout" class="custom-checkout-button">
+            </div>
+    </div>
+        
+    </form>
+    
+{%- else -%}
+  <p>The cart is empty. <a href="/collections/all">Continue shopping</a></p>
+{%- endif -%}
+</section>
+</section>
+
+
+<style>
+    .custom-item-divider {
+        border-top: 1px solid #ddd;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    
+      .cart-items-section {
+        max-width: 1500px;
+        padding: 0 165px;
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        color: rgba(39, 39, 39, 1);
+        }
+    .table-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .table-header p:first-child {
+        width: 340px;
+    }
+    .items-proprieties {
+        max-width: 1500px;
+    }
+    .product-quantity {
+        max-width: 75px;
+        text-align: center;
+        border: 1px solid var(--green);
+        padding: 4px;
+    }
+    .product-quantity:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .item-description {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .item-product{
+        display: flex;
+        width: 33%;
+    }
+    .item-product a img{
+        margin: 0px 30px 0 0px;
+        background: #F7F8FA;
+    }
+
+    .product-item-title {
+        text-decoration: none;
+        color: rgba(39, 39, 39, 1);
+        font-size: 1.625em;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+
+    .custom-button-remove a{
+        color: var(--green);
+        text-decoration: underline;
+
+    }
+    .checkout-proceed {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .cart-item-price {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        font-size: 1.125em;
+        color: rgba(39, 39, 39, 1);
+    }
+    .subtotal-calculation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .custom-checkout-button-div{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 42px;
+        border: none;
+    }
+    .custom-checkout-button {
+        border: none;
+        width: auto;
+        max-width: 183px;
+        padding: 8px 44px;
+        color: var(--white);
+        background-color: var(--green);
+        font-size: 1.25em;
+        margin-left: 50px;
+        border-radius: 4px;
+    }
+    .subtotal-information {
+        font-size: 1.25em;
+        margin: 40px 0 0 0;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        color: rgba(39, 39, 39, 1);
+    }
+    .tax-information {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+        color: rgba(158, 158, 158, 1);
+        margin-top: 0;
+    }
+</style>
